@@ -12,8 +12,10 @@ module WebBlocks
           def test_namespace
             assert defined? ::WebBlocks::Core::Block
             assert defined? ::WebBlocks::Core::BlockFactory
+            assert defined? ::WebBlocks::Core::BlockFile::Scss
             assert defined? ::WebBlocks::Core::Compiler
             assert defined? ::WebBlocks::Core::CompilerTask::Base
+            assert defined? ::WebBlocks::Core::CompilerTask::Parse
             assert defined? ::WebBlocks::Core::CompilerTask::Setup
             assert defined? ::WebBlocks::Core::CompilerTask::Teardown::All
             assert defined? ::WebBlocks::Core::CompilerTask::Teardown::Core
