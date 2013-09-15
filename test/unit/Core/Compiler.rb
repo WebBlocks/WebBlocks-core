@@ -37,7 +37,7 @@ module WebBlocks
               FileUtils.mkdir @base_directory + @components_directory
               FileUtils.mkdir @base_directory + @components_directory + 'component'
               FileUtils.mkdir @base_directory + @components_directory + 'block-component'
-              FileUtils.touch @base_directory + @components_directory + 'block-component' + 'Blocksfile.rb'
+              FileUtils.touch @base_directory + @components_directory + 'block-component' + 'Blockfile.rb'
               
             end
             

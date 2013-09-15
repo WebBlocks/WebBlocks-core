@@ -20,9 +20,9 @@ module WebBlocks
               FileUtils.mkdir @components_directory + 'component'
               FileUtils.mkdir @components_directory + 'component2'
               FileUtils.mkdir @components_directory + 'block-component'
-              FileUtils.touch @components_directory + 'block-component' + 'Blocksfile.rb'
+              FileUtils.touch @components_directory + 'block-component' + 'Blockfile.rb'
               FileUtils.mkdir @components_directory + 'block-component2'
-              FileUtils.touch @components_directory + 'block-component2' + 'Blocksfile.rb'
+              FileUtils.touch @components_directory + 'block-component2' + 'Blockfile.rb'
               
               @components = [
                 @components_directory + 'component',
@@ -48,9 +48,9 @@ module WebBlocks
               
             end
             
-            def test_blocksfiles
+            def test_blockfiles
               
-              @factory.blocksfiles.each { |f| assert f.to_s.match /Blocksfile\.rb$/ }
+              @factory.blockfiles.each { |f| assert f.to_s.match /Blockfile\.rb$/ }
               
             end
             
@@ -69,7 +69,7 @@ module WebBlocks
                 assert block.class.name == 'WebBlocks::Core::Block'
                 assert block.directory == @components_directory + component
                 assert block.name == component
-                assert block.blocksfile == @components_directory + component + 'Blocksfile.rb'
+                assert block.blockfile == @components_directory + component + 'Blockfile.rb'
               end
               
             end

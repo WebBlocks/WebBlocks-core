@@ -8,11 +8,11 @@ module WebBlocks
       attr_accessor :directories
 
       def initialize directories
-        @directories = directories.select { |directory| File.exists? "#{directory}/Blocksfile.rb" }
+        @directories = directories.select { |directory| File.exists? "#{directory}/Blockfile.rb" }
       end
       
-      def blocksfiles
-        directories.map { |directory| directory += "Blocksfile.rb" }
+      def blockfiles
+        directories.map { |directory| directory += "Blockfile.rb" }
       end
 
       def names

@@ -24,7 +24,7 @@ module WebBlocks
               
               @basic_block_name = 'block1'
               FileUtils.mkdir @base_directory + @components_directory + @basic_block_name
-              File.open(@base_directory + @components_directory + @basic_block_name + 'Blocksfile.rb', 'w') do |file|
+              File.open(@base_directory + @components_directory + @basic_block_name + 'Blockfile.rb', 'w') do |file|
                 file.puts "block '#{@basic_block_name}' do"
                 file.puts "  scss_file 's1'"
                 file.puts "  scss_file 's2'"
@@ -35,7 +35,7 @@ module WebBlocks
               
               @block_name = 'block2'
               FileUtils.mkdir @base_directory + @components_directory + @block_name
-              FileUtils.touch @base_directory + @components_directory + @block_name + "Blocksfile.rb"
+              FileUtils.touch @base_directory + @components_directory + @block_name + "Blockfile.rb"
               
               @basic_component_name = 'component1'
               FileUtils.mkdir @base_directory + @components_directory + @basic_component_name
@@ -71,8 +71,8 @@ module WebBlocks
               assert block.name == 'Core'
               assert_raise(NoMethodError) { block.name = 'test' }
               
-              assert block.blocksfile == path + 'Blocksfile.rb'
-              assert_raise(NoMethodError) { block.blocksfile = 'test' }
+              assert block.blockfile == path + 'Blockfile.rb'
+              assert_raise(NoMethodError) { block.blockfile = 'test' }
               
               assert block.source_directory == false
               assert_nothing_raised { block.source_directory = 'a' }
@@ -174,7 +174,7 @@ module WebBlocks
             
             def test_integration
               
-              File.open(@base_directory + @components_directory + @block_name + 'Blocksfile.rb', 'w') do |file|
+              File.open(@base_directory + @components_directory + @block_name + 'Blockfile.rb', 'w') do |file|
                 
                 file.puts "block '#{@block_name}' do"
                 

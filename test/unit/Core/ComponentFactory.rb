@@ -18,9 +18,9 @@ module WebBlocks
               FileUtils.rm_rf @components_directory
               FileUtils.mkdir @components_directory
               FileUtils.mkdir @components_directory + 'component'
-              FileUtils.touch @components_directory + 'component' + 'Blocksfile.rb'
+              FileUtils.touch @components_directory + 'component' + 'Blockfile.rb'
               FileUtils.mkdir @components_directory + 'component2'
-              FileUtils.touch @components_directory + 'component2' + 'Blocksfile.rb'
+              FileUtils.touch @components_directory + 'component2' + 'Blockfile.rb'
               FileUtils.mkdir @components_directory + 'component3'
               
               @components = [

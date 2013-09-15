@@ -7,7 +7,7 @@ module WebBlocks
   module Core
     class Block
       
-      attr_reader :directory, :name, :blocksfile
+      attr_reader :directory, :name, :blockfile
       attr_writer :source_directory
       attr_writer :compiler
       attr_reader :scss_files
@@ -17,7 +17,7 @@ module WebBlocks
         
         @directory = Pathname.new(directory).realpath
         @name = File.basename directory
-        @blocksfile = @directory + "Blocksfile.rb"
+        @blockfile = @directory + "Blockfile.rb"
         
         @source_directory = false
         @parsed = false
@@ -56,7 +56,7 @@ module WebBlocks
           raise 'Block must invoke `with_compiler` or pass compiler to `parse!`' unless has_compiler?
           
           @parsed = true
-          instance_eval File.open(blocksfile).read
+          instance_eval File.open(blockfile).read
           
         end
         
