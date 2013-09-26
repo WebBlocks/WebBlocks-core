@@ -1,5 +1,6 @@
 require 'pathname'
 require 'ostruct'
+require 'docile'
 require 'extensions/kernel' if defined?(require_relative).nil?
 require_relative 'BlockFile/Scss'
 
